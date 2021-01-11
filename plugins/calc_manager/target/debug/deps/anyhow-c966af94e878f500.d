@@ -1,0 +1,13 @@
+/home/adriano/repos/calculator/plugins/calc_manager/target/debug/deps/anyhow-c966af94e878f500.rmeta: /home/adriano/.cargo/registry/src/github.com-1ecc6299db9ec823/anyhow-1.0.37/src/lib.rs /home/adriano/.cargo/registry/src/github.com-1ecc6299db9ec823/anyhow-1.0.37/src/backtrace.rs /home/adriano/.cargo/registry/src/github.com-1ecc6299db9ec823/anyhow-1.0.37/src/chain.rs /home/adriano/.cargo/registry/src/github.com-1ecc6299db9ec823/anyhow-1.0.37/src/context.rs /home/adriano/.cargo/registry/src/github.com-1ecc6299db9ec823/anyhow-1.0.37/src/error.rs /home/adriano/.cargo/registry/src/github.com-1ecc6299db9ec823/anyhow-1.0.37/src/fmt.rs /home/adriano/.cargo/registry/src/github.com-1ecc6299db9ec823/anyhow-1.0.37/src/kind.rs /home/adriano/.cargo/registry/src/github.com-1ecc6299db9ec823/anyhow-1.0.37/src/macros.rs /home/adriano/.cargo/registry/src/github.com-1ecc6299db9ec823/anyhow-1.0.37/src/wrapper.rs
+
+/home/adriano/repos/calculator/plugins/calc_manager/target/debug/deps/anyhow-c966af94e878f500.d: /home/adriano/.cargo/registry/src/github.com-1ecc6299db9ec823/anyhow-1.0.37/src/lib.rs /home/adriano/.cargo/registry/src/github.com-1ecc6299db9ec823/anyhow-1.0.37/src/backtrace.rs /home/adriano/.cargo/registry/src/github.com-1ecc6299db9ec823/anyhow-1.0.37/src/chain.rs /home/adriano/.cargo/registry/src/github.com-1ecc6299db9ec823/anyhow-1.0.37/src/context.rs /home/adriano/.cargo/registry/src/github.com-1ecc6299db9ec823/anyhow-1.0.37/src/error.rs /home/adriano/.cargo/registry/src/github.com-1ecc6299db9ec823/anyhow-1.0.37/src/fmt.rs /home/adriano/.cargo/registry/src/github.com-1ecc6299db9ec823/anyhow-1.0.37/src/kind.rs /home/adriano/.cargo/registry/src/github.com-1ecc6299db9ec823/anyhow-1.0.37/src/macros.rs /home/adriano/.cargo/registry/src/github.com-1ecc6299db9ec823/anyhow-1.0.37/src/wrapper.rs
+
+/home/adriano/.cargo/registry/src/github.com-1ecc6299db9ec823/anyhow-1.0.37/src/lib.rs:
+/home/adriano/.cargo/registry/src/github.com-1ecc6299db9ec823/anyhow-1.0.37/src/backtrace.rs:
+/home/adriano/.cargo/registry/src/github.com-1ecc6299db9ec823/anyhow-1.0.37/src/chain.rs:
+/home/adriano/.cargo/registry/src/github.com-1ecc6299db9ec823/anyhow-1.0.37/src/context.rs:
+/home/adriano/.cargo/registry/src/github.com-1ecc6299db9ec823/anyhow-1.0.37/src/error.rs:
+/home/adriano/.cargo/registry/src/github.com-1ecc6299db9ec823/anyhow-1.0.37/src/fmt.rs:
+/home/adriano/.cargo/registry/src/github.com-1ecc6299db9ec823/anyhow-1.0.37/src/kind.rs:
+/home/adriano/.cargo/registry/src/github.com-1ecc6299db9ec823/anyhow-1.0.37/src/macros.rs:
+/home/adriano/.cargo/registry/src/github.com-1ecc6299db9ec823/anyhow-1.0.37/src/wrapper.rs:

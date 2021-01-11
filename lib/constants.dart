@@ -1,0 +1,1 @@
+const kDefaultPadWidth = 360.0;

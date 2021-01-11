@@ -1,0 +1,17 @@
+[package]
+name = "calc_manager"
+version = "0.1.0"
+authors = ["Adriano Souza"]
+edition = "2018"
+
+[dependencies.conquer-once]
+version = "0.2.1"
+default-features = false
+    
+[lib]
+name = "calc_manager"
+crate-type = ["staticlib", "cdylib"]
+
+[dependencies]
+idl_internal = { git = "https://github.com/adrianos42/native_idl" }
+lazy_static = "1.4.0"

@@ -1,0 +1,23 @@
+name: shared
+description: Calculator interface.
+version: 0.0.1
+author:
+
+environment:
+  sdk: '>=2.12.0-0 <3.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  
+  rxdart: ^0.26.0-nullsafety.0
+
+  calc_manager:
+    path:
+      ../plugins/calc_manager
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:
