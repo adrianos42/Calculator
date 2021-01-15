@@ -2,7 +2,6 @@ library calc_manager
 
 interface Programmer {
     commands: (value: stream int) -> stream int,
-    commandss: static (value: stream int) -> stream int,
 }
 
 enum Command {

@@ -12,7 +12,7 @@ client Main {
 server MainServer {
     layers: [RustAsync, FFI],
     language: "rust",
-    relative_path: "target/release",
+    relative_path: "../calc_manager_impl/target/release",
 }
 
 layer Flutter {

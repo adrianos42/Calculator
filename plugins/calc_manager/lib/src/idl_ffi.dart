@@ -8,7 +8,8 @@ import 'dart:collection';
 import 'package:ffi/ffi.dart';
 import 'package:ffi_internal/ffi_internal.dart';
 
-final DynamicLibrary _$kLib = openLibrary('calc_manager', 'target/release/');
+final DynamicLibrary _$kLib =
+    openLibrary('calc_manager', '../calc_manager_impl/target/release/');
 
 class Programmer implements idl_types_interface.ProgrammerInstance, Disposable {
   ReceivePort? _$toMainSendCommandsPort;

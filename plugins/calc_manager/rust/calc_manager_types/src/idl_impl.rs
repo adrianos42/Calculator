@@ -16,16 +16,3 @@ pub trait ProgrammerInstance {
         stream: StreamReceiver,
     ) -> StreamSender<i64>;
 }
-pub trait ProgrammerStatic {
-    fn commandss(&self, value: Box<dyn StreamInstance>, stream_instance: Box<dyn StreamInstance>);
-    fn commandss_stream_sender(
-        &self,
-        stream_instance: Box<dyn StreamInstance>,
-        stream: StreamSender<i64>,
-    ) -> StreamReceiver;
-    fn commandss_stream(
-        &self,
-        stream_instance: Box<dyn StreamInstance>,
-        stream: StreamReceiver,
-    ) -> StreamSender<i64>;
-}

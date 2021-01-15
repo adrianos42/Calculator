@@ -1,41 +1,42 @@
-use crate::idl_impl::*;
-use crate::idl_types::*;
+//use calc_manager_types::{idl_impl::*, idl_types::*};
 use idl_internal::*;
 use std::sync::{Arc, RwLock};
 use std::{collections::HashMap, thread::sleep, time::Duration};
 
-pub(crate) struct Programmer {
+include_idl!("calc_manager");
+
+pub struct Programmer {
     stream_instances: Arc<RwLock<i64>>,
-    stream_subscriber: Option<Box<dyn StreamInstance>>,
+    stream_subscriber: Option<Box<dyn StreamInstance + Send>>,
 }
 
-impl ProgrammerInstance for Programmer {
+impl calc_manager::idl_impl::ProgrammerInstance for Programmer {
     fn commands(
         &mut self,
-        value: Box<dyn StreamInstance>,
-        stream_instance: Box<dyn StreamInstance>,
+        value: Box<dyn StreamInstance + Send>,
+        stream_instance: Box<dyn StreamInstance + Send>,
     ) {
         let context = self.stream_instances.clone();
         value.wake_client();
         self.stream_subscriber = Some(value);
 
-        // std::thread::spawn(move || {
-        //     let mut prev = 0;
-        //     loop {
-        //         sleep(Duration::from_millis(600));
-        //         *context.write().unwrap() = prev;
-        //         stream_instance.wake_client();
-        //         if prev > 5 {
-        //             return;
-        //         }
-        //         prev += 1;
-        //     }
-        // });
+        std::thread::spawn(move || {
+            let mut prev = 0;
+            loop {
+                sleep(Duration::from_millis(600));
+                *context.write().unwrap() = prev;
+                stream_instance.wake_client();
+                if prev > 5 {
+                    return;
+                }
+                prev += 1;
+            }
+        });
     }
 
     fn commands_stream(
         &mut self,
-        stream_instance: Box<dyn StreamInstance>,
+        stream_instance: Box<dyn StreamInstance + Send>,
         stream: StreamReceiver,
     ) -> StreamSender<i64> {
         match stream {
@@ -50,13 +51,13 @@ impl ProgrammerInstance for Programmer {
             StreamReceiver::Close => StreamSender::Ok,
             StreamReceiver::Pause => StreamSender::Ok,
             StreamReceiver::Resume => StreamSender::Ok,
-            _ => panic!()
+            _ => panic!(),
         }
     }
 
     fn commands_stream_sender(
         &mut self,
-        stream_instance: Box<dyn StreamInstance>,
+        stream_instance: Box<dyn StreamInstance + Send>,
         stream: StreamSender<i64>,
     ) -> StreamReceiver {
         match stream {
@@ -75,32 +76,10 @@ impl ProgrammerInstance for Programmer {
 }
 
 impl Programmer {
-    pub(crate) fn new() -> Self {
+    pub fn new() -> Self {
         Self {
             stream_instances: Default::default(),
             stream_subscriber: None,
         }
-    }
-}
-
-impl ProgrammerStatic for Programmer {
-    fn commandss(&self, value: Box<dyn StreamInstance>, stream_instance: Box<dyn StreamInstance>) {
-        todo!()
-    }
-
-    fn commandss_stream_sender(
-        &self,
-        stream_instance: Box<dyn StreamInstance>,
-        stream: StreamSender<i64>,
-    ) -> StreamReceiver {
-        todo!()
-    }
-
-    fn commandss_stream(
-        &self,
-        stream_instance: Box<dyn StreamInstance>,
-        stream: StreamReceiver,
-    ) -> StreamSender<i64> {
-        todo!()
     }
 }
