@@ -3,6 +3,8 @@ description: Calculator interface.
 version: 0.0.1
 author:
 
+publish_to: 'none' 
+
 environment:
   sdk: '>=2.12.0-0 <3.0.0'
 
@@ -10,11 +12,11 @@ dependencies:
   flutter:
     sdk: flutter
   
-  rxdart: ^0.26.0-nullsafety.0
+  rxdart: ^0.26.0-nullsafety.1
 
-  calc_manager:
-    path:
-      ../plugins/calc_manager
+  #calc_manager:
+   # path:
+    #  ../plugins/calc_manager/build/calc_manager
 
 dev_dependencies:
   flutter_test:

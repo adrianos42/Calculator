@@ -31,9 +31,9 @@ class ProgrammerNumPad extends StatelessWidget {
   void _changeShiftMode() {
     ProgrammerMode.sendCommand(24);
     
-    var bitShiftMode = ProgrammerMode.bitShiftMode.value;
+    var bitShiftMode = ProgrammerMode.bitShiftMode.valueWrapper!.value;
 
-    if (CaptionNotification.hasCaption.value!) {
+    if (CaptionNotification.hasCaption.valueWrapper!.value) {
       bitShiftMode = _kBitShiftNames[bitShiftMode]![1] as BitShiftMode;
       ProgrammerMode.bitShiftMode.add(bitShiftMode);
     }
@@ -43,10 +43,10 @@ class ProgrammerNumPad extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final Color eqColor = Theme.of(context).colorScheme.primary3;
+    final Color eqColor = Theme.of(context).colorScheme.primary2.toColor();
 
-    final Color commandColor = Theme.of(context).colorScheme.background;
-    final Color symColor = Theme.of(context).colorScheme.background;
+    final Color commandColor = Theme.of(context).colorScheme.background.toColor();
+    final Color symColor = Theme.of(context).colorScheme.background.toColor();
     final Color numColor = Color(0xFF0A0A0A);
 
     Widget result = Column(
@@ -128,7 +128,7 @@ class ProgrammerNumPad extends StatelessWidget {
                     onPressed: () => _changeShiftMode(),
                     child: Icon(
                       CalculatorIcons.shift_select,
-                      color: Theme.of(context).textTheme.textMedium,
+                      color: Theme.of(context).textTheme.textMedium.toColor(),
                       size: 18.0,
                     ),
                     color: symColor),
@@ -158,7 +158,7 @@ class ProgrammerNumPad extends StatelessWidget {
                 child: NumTile(
                     child: Icon(
                       Icons.backspace,
-                      color: Theme.of(context).textTheme.textMedium,
+                      color: Theme.of(context).textTheme.textMedium.toColor(),
                       size: 16,
                     ),
                     color: symColor),

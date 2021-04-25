@@ -11,7 +11,7 @@ class _DisplayState extends State<Display> {
     final textTheme = Theme.of(context).textTheme;
     final resultTextTheme = textTheme.title;
     final topTextTheme = textTheme.body1.copyWith(
-      color: textTheme.textMedium,
+      color: textTheme.textMedium.toColor(),
     );
 
     return Container(

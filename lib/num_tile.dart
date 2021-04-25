@@ -60,10 +60,11 @@ class _NumTileState extends State<NumTile> with ComponentStateMixin {
   @override
   Widget build(BuildContext context) {
     final ColorScheme colorScheme = Theme.of(context).colorScheme;
+    final TextTheme textTheme = Theme.of(context).textTheme;
 
     final Color enabledForeground = widget.color;
-    final Color pressedForeground = colorScheme.overlay8;
-    final Color hoveredForeground = colorScheme.overlay4;
+    final Color pressedForeground = colorScheme.primary.toColor();
+    final Color hoveredForeground = colorScheme.shade6.toColor();
 
     final Color color = pressed
         ? pressedForeground

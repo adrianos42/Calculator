@@ -7,8 +7,8 @@ import '../display.dart';
 class StandardCalculator extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final Color numColor = Theme.of(context).colorScheme.overlay2;
-    final Color symColor = Theme.of(context).colorScheme.overlay1;
+    //final Color numColor = Theme.of(context).colorScheme.overlay2;
+    //final Color symColor = Theme.of(context).colorScheme.overlay1;
 
     void setAction(NumPadAction action) {}
 

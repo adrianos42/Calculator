@@ -35,7 +35,7 @@ class BinaryNumPad extends StatelessWidget {
             final int binIndex = row * 0x10 + col * 0x4 + index;
 
             return StreamBuilder(
-              initialData: NumPad.binaryPosition[binIndex].value,
+              initialData: NumPad.binaryPosition[binIndex].valueWrapper,
               stream: NumPad.binaryPosition[binIndex],
               builder: (context, snapshot) {
                 final enabled = binIndex < bitwidth;
@@ -57,7 +57,7 @@ class BinaryNumPad extends StatelessWidget {
           child: Text(
             names[row][col],
             style: textTheme.caption.copyWith(
-              color: labelColor,
+              color: labelColor.toColor(),
             ),
           ),
         )
@@ -67,7 +67,7 @@ class BinaryNumPad extends StatelessWidget {
 
   Widget createZeroRow() {
     return StreamBuilder(
-      initialData: ProgrammerMode.bitWidth.value,
+      initialData: ProgrammerMode.bitWidth.valueWrapper,
       stream: ProgrammerMode.bitWidth,
       builder: (context, snapshot) {
         final int numBitWidth = kNumWidths[snapshot.data! as WordWidth]!;

@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return DesktopApp(
       theme: ThemeData.dark(),
-      home: Builder(builder: (context) {  
+      home: Builder(builder: (context) {
         Widget topMenu = Column(
           mainAxisAlignment: MainAxisAlignment.start,
           mainAxisSize: MainAxisSize.min,
@@ -37,7 +37,7 @@ class MyApp extends StatelessWidget {
                   children: [
                     ContextMenuButton(
                       Icons.menu,
-                      initialValue: 'prg',
+                      value: 'prg',
                       itemBuilder: (context) => [
                         ContextMenuItem(
                           value: 'std',
@@ -238,7 +238,7 @@ class _TopCaptionState extends State<_TopCaption>
             fadeoutTimer?.cancel();
 
             String text = '';
-            
+
             if (snapshot.hasData) {
               CaptionNotification.hasCaption.add(true);
 
@@ -260,7 +260,10 @@ class _TopCaptionState extends State<_TopCaption>
                 text,
                 overflow: TextOverflow.ellipsis,
                 maxLines: 1,
-                style: Theme.of(context).textTheme.body2.copyWith(color: color),
+                style: Theme.of(context)
+                    .textTheme
+                    .body2
+                    .copyWith(color: color.toColor()),
               ),
             );
           },

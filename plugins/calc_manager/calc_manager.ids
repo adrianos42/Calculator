@@ -1,0 +1,34 @@
+package calc_manager {
+    version: 1.0,
+    idl_version: 0.1,
+}
+
+client Main {
+    language: "dart",
+    layers: [Flutter],
+    servers: [MainServer],
+}
+
+server MainServer {
+    layers: [RustAsync, FFI],
+    language: "rust",
+    relative_path: "build/idl",
+    path: "/home/adriano/repos/calculator/plugins/rust/calc_manager/",
+}
+
+layer Flutter {
+    endpoint: true,
+    languages: ["dart"],
+    client_only: true,
+}
+
+layer FFI {
+    endpoint: false,
+    client_only: false,
+}
+
+layer RustAsync {
+    endpoint: true,
+    client_only: true,
+    languages: ["rust"],
+}

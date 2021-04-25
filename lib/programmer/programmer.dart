@@ -22,7 +22,7 @@ class _BaseDisplay extends StatelessWidget {
         bodyPadding: EdgeInsets.zero,
       ),
       child: StreamBuilder(
-        initialData: ProgrammerMode.base.value,
+        initialData: ProgrammerMode.base.valueWrapper?.value,
         stream: ProgrammerMode.base,
         builder: (context, snapshot) {
           final NumBase base = snapshot.data! as NumBase;
@@ -150,7 +150,7 @@ class _WordMode extends StatelessWidget {
       alignment: Alignment.center,
       child: StreamBuilder(
         stream: ProgrammerMode.bitWidth,
-        initialData: ProgrammerMode.bitWidth.value,
+        initialData: ProgrammerMode.bitWidth.valueWrapper?.value,
         builder: (context, snapshot) {
           final bitWidth = snapshot.data! as WordWidth;
 

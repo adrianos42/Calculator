@@ -21,9 +21,9 @@ class NumPad extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final Color eqColor = Theme.of(context).colorScheme.primary3;
+    final Color eqColor = Theme.of(context).colorScheme.primary2.toColor();
 
-    final Color symColor = Theme.of(context).colorScheme.background;
+    final Color symColor = Theme.of(context).colorScheme.background.toColor();
     final Color numColor = Color(0xFF0A0A0A);
 
     Widget result = Column(
@@ -62,7 +62,7 @@ class NumPad extends StatelessWidget {
                 child: NumTile(
                     child: Icon(
                       Icons.backspace,
-                      color: Theme.of(context).textTheme.textMedium,
+                      color: Theme.of(context).textTheme.textMedium.toColor(),
                       size: 16,
                     ),
                     color: symColor),

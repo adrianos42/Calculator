@@ -18,11 +18,7 @@ class ProgrammerMode {
   static final base = BehaviorSubject<NumBase>.seeded(NumBase.dec);
 
   static void sendCommand(int value) async {
-   // await CalcManager.registerDisplayCallback((value) {
-   //   print('finally from here $value');
-   // });
-
-   // await CalcManager.sendCommand(value);
+   
   }
 }
 
